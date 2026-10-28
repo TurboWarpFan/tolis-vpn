@@ -1,4 +1,4 @@
-# Tolis VPN 1.1.0 installer
+# Tolis VPN 1.2.0 installer
 # Install with:  irm https://raw.githubusercontent.com/TurboWarpFan/tolis-vpn/main/install.ps1 | iex
 # Set TOLIS_INSTALL_DIR first for a portable install that leaves PATH alone.
 & {
@@ -7,13 +7,13 @@
     try { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor 3072 } catch {}
 
     $base = 'https://raw.githubusercontent.com/TurboWarpFan/tolis-vpn/main'
-    $sha = '498c1820181d5619ffaea127cfd51d290d59081972f4f47c672db41e2af83f7e'
+    $sha = 'c30cde8fb39a21357a4b7c9289602dc57058d368c60b7fae1cf992e5e8990fff'
     $dir = if ($env:TOLIS_INSTALL_DIR) { $env:TOLIS_INSTALL_DIR } else { Join-Path $env:LOCALAPPDATA 'Programs\Tolis' }
     $exe = Join-Path $dir 'tolis.exe'
     $old = Join-Path $dir 'tolis.old.exe'
 
     Write-Host ''
-    Write-Host '  Tolis VPN 1.1.0' -ForegroundColor Cyan
+    Write-Host '  Tolis VPN 1.2.0' -ForegroundColor Cyan
     Write-Host '  Installing...'
 
     New-Item -ItemType Directory -Force -Path $dir | Out-Null
